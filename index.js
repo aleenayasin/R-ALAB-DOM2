@@ -109,8 +109,8 @@ console.log(event.target.textContent);
 
 var clickedLink = event.target;
 if (!clickedLink.classList.contains('active')) {
-  for (var i = 0; i < topMenuLinks.length; i++) {
-    topMenuLinks[i].classList.remove('active');
+  for (var i = 0; i < topMenuEl.length; i++) {
+    topMenuEl[i].classList.remove('active');
   }
   clickedLink.classList.add('active');
 } else {
@@ -135,7 +135,7 @@ if (linkObject && linkObject.subLinks) {
 
 // Helper function to build submenu
 function buildSubMenu(subLinks) {
-var subMenuEl = document.getElementById('subMenu');
+var subMenuEl = document.getElementById('sub-menu');
 subMenuEl.innerHTML = '';
 subLinks.forEach(function(subLink) {
   var a = document.createElement('a');
@@ -153,8 +153,8 @@ if (!event.target.matches('a')) return;
 
 subMenuEl.style.top = '0';
 var clickedSubLink = event.target;
-for (var i = 0; i < topMenuLinks.length; i++) {
-  topMenuLinks[i].classList.remove('active');
+for (var i = 0; i < topMenuEl.length; i++) {
+  topMenuEl[i].classList.remove('active');
 }
 var mainEl = document.getElementById('main');
 mainEl.innerHTML = '<h1>' + clickedSubLink.textContent + '</h1>';
